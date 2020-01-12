@@ -24,7 +24,7 @@ public class Prop : MonoBehaviour
 
 		if (hp <= 0)
 		{
-			ParticleSystem instance = Instantiate(explosionPaticle);
+			ParticleSystem instance = Instantiate(explosionPaticle, transform.position, transform.rotation);
 			AudioSource audio = instance.GetComponent<AudioSource>();
 
 			instance.Play();
