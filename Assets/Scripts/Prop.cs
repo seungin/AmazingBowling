@@ -5,6 +5,7 @@ using UnityEngine;
 public class Prop : MonoBehaviour
 {
 	public ParticleSystem explosionPaticle;
+	public int score = 5;
 	public float hp = 100f;
 	private float fullHp;
 	private Material material;
@@ -30,8 +31,9 @@ public class Prop : MonoBehaviour
 			instance.Play();
 			audio.Play();
 
-			Destroy(instance.gameObject, instance.main.duration);
+			GameManager.instance.OnPropDestroy(score);
 
+			Destroy(instance.gameObject, instance.main.duration);
 			gameObject.SetActive(false);
 		}
 	}

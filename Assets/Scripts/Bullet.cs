@@ -33,6 +33,8 @@ public class Bullet : MonoBehaviour
 			explosionParticle.Play();
 			explosionAudio.Play();
 
+			GameManager.instance.OnBallDestroy();
+
 			Destroy(explosionParticle.gameObject, explosionParticle.main.duration);
 			Destroy(gameObject);
 		}
