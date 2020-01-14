@@ -11,6 +11,7 @@ public class BallShooter : MonoBehaviour
 	public AudioSource shootingAudio;
 	public AudioClip chargingClip;
 	public AudioClip fireClip;
+	public CamFollow cam;
 
 	public float minForce = 15f;
 	public float maxForce = 30f;
@@ -40,6 +41,8 @@ public class BallShooter : MonoBehaviour
 		{
 			Rigidbody instance = Instantiate(bullet, gunpoint.position, gunpoint.rotation);
 			instance.velocity = targetForce * gunpoint.forward;
+
+			cam.SetTarget(instance.transform, CamFollow.State.Tracking);
 
 			targetForce = minForce;
 			powerGauge.value = minForce;
