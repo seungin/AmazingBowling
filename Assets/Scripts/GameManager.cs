@@ -12,6 +12,7 @@ public class GameManager : MonoBehaviour
 	public Text scoreText;
 	public Text bestScoreText;
 
+	public SpawnGenerator spawnGenerator;
 	public ShooterRotator shooterRotator;
 	public CamFollow cam;
 
@@ -21,7 +22,7 @@ public class GameManager : MonoBehaviour
 	private void Awake()
 	{
 		instance = this;
-		ResetRound();
+		UpdateUI();
 	}
 
 	private void Start()
@@ -66,6 +67,7 @@ public class GameManager : MonoBehaviour
 	public void ResetRound()
 	{
 		score = 0;
+		spawnGenerator.Reset();
 		UpdateUI();
 	}
 

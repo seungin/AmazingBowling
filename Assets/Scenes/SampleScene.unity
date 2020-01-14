@@ -1447,6 +1447,7 @@ MonoBehaviour:
   messageText: {fileID: 1822086299}
   scoreText: {fileID: 913424489}
   bestScoreText: {fileID: 1251871248}
+  spawnGenerator: {fileID: 459163361}
   shooterRotator: {fileID: 609404243}
   cam: {fileID: 1993653098}
   isRoundActive: 0
