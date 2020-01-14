@@ -2,17 +2,19 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.Events;
 
 public class GameManager : MonoBehaviour
 {
 	public static GameManager instance;
+
+	public UnityEvent onReset;
 
 	public GameObject readyPanel;
 	public Text messageText;
 	public Text scoreText;
 	public Text bestScoreText;
 
-	public SpawnGenerator spawnGenerator;
 	public ShooterRotator shooterRotator;
 	public CamFollow cam;
 
@@ -67,8 +69,8 @@ public class GameManager : MonoBehaviour
 	public void ResetRound()
 	{
 		score = 0;
-		spawnGenerator.Reset();
 		UpdateUI();
+		onReset.Invoke();
 	}
 
 	public void OnBallDestroy()
