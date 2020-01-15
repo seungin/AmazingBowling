@@ -45,6 +45,7 @@ public class SpawnGenerator : MonoBehaviour
 	{
 		for (int i = 0; i < props.Count; ++i)
 		{
+			props[i].GetComponent<MeshRenderer>().material.color = Color.green;
 			props[i].transform.position = GetRandomPosition();
 			props[i].SetActive(true);
 		}
