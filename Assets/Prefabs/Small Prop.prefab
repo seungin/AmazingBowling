@@ -124,6 +124,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   explosionPaticle: {fileID: 9108232959427804974}
+  score: 5
   hp: 75
 --- !u!1001 &8937784902619048838
 PrefabInstance:
